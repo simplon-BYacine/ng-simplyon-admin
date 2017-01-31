@@ -1,10 +1,10 @@
 {
-  "name": "ng-simplyon",
+  "name": "ng-simplyon-admin",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "webpack-dashboard -- ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -15,12 +15,16 @@
     "@angular/common": "2.2.1",
     "@angular/compiler": "2.2.1",
     "@angular/core": "2.2.1",
+    "@angular/flex-layout": "^2.0.0-beta.3",
     "@angular/forms": "2.2.1",
     "@angular/http": "2.2.1",
+    "@angular/material": "git+https://github.com/angular/material2-builds.git",
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
+    "@types/moment": "^2.13.0",
     "core-js": "^2.4.1",
+    "moment": "^2.17.1",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
@@ -42,6 +46,7 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "webdriver-manager": "10.2.5"
+    "webdriver-manager": "10.2.5",
+    "webpack-dashboard": "^0.2.1"
   }
 }

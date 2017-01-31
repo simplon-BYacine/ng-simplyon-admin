@@ -1,0 +1,23 @@
+<table class="mdl-data-table mdl-js-data-table">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Étudiants</th>
+      <th class="mdl-data-table__cell--non-numeric">Matin</th>
+      <th class="mdl-data-table__cell--non-numeric">Après-midi</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="dcPM.students_present" >
+    <tr *ngFor="let student of dcPM.students_present" >
+      <td class="mdl-data-table__cell--non-numeric">
+        {{ student.name }} {{ student.lastname }}
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        {{ student?.matin === 1 ? "Présent" : " " }}
+      </td>
+      <td class="mdl-data-table__cell--non-numeric">
+        {{ student?.apres_midi === 1 ? "Présent" : " " }}
+      </td>
+    </tr>
+
+  </tbody>
+</table>

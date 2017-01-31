@@ -1,0 +1,58 @@
+<div class="attendance-students">
+  <div class="selection" *ngIf="asPM.students">
+      <select #student class="student" (change)="asPM.selectStudent(student.value)">
+        <option *ngFor="let student of asPM.students" [value]="student.id">
+          {{ student.prenom }} {{ student.nom }}
+        </option>
+      </select>
+
+    <select #month class="month" (change)="asPM.selectMonth(month.value)" >
+      <option *ngFor="let month of asPM.months" [value]="month.id">
+        {{ month.name }}
+      </option>
+    </select>
+
+    <select #year class="year" (change)="asPM.selectYear(year.value)">
+      <option *ngFor="let year of asPM.years" [value]="year">
+        {{ year }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="asPM.days">
+    
+    <div class="action">
+      <button md-raised-button (click)="asPM.toggleEdit()" [style.backgroundColor]="asPM.editable ? '#8fe093' : '#dddddd' ">Edit</button>
+      <button md-button (click)="asPM.checkAll()">Check All</button>
+    </div>
+      
+
+    <table class="mdl-data-table mdl-js-data-table">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">Jour</th>
+          <th class="mdl-data-table__cell--non-numeric">9h30 - 12h30</th>
+          <th class="mdl-data-table__cell--non-numeric">13h30 - 17h30</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let day of asPM.days; let i=index"
+            [style.backgroundColor]="day.open ? 'white' : '#c1c3d1' ">
+          <td class="mdl-data-table__cell--non-numeric">
+            {{ day.name }} {{ day.num }}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" (click)="asPM.togglePresence(i, 'matin')" 
+          [style.cursor]="(asPM.editable && day.open) ? 'pointer' : 'default' ">
+            {{ ( day.matin ) ? "Présent" : " " }}
+          </td>
+          <td class="mdl-data-table__cell--non-numeric" (click)="asPM.togglePresence(i, 'apres_midi')"
+          [style.cursor]="(asPM.editable && day.open) ? 'pointer' : 'default' ">
+            {{ ( day.apres_midi ) ? "Présent" : " " }}
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

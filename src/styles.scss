@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+	background-color: #f9f9f9;
+	font-family: sans-serif;
+  margin: 0;
+}
+.mdl-layout__drawer{
+	background-color: white;
+}
+
+.mdl-layout__drawer>img {
+	margin-top: 100px;
+}
+
+.mdl-layout {
+    background-color: white;
+}
+
+.mdl-navigation {
+	padding-top: 100px;
+}
+
+.mdl-navigation__link {
+	padding: 30px 40px;
+    color: #E0115F;
+}
+
+.mdl-navigation__link:hover {
+	background-color: #E0115F;
+	color: white;
+}
+
+.mdl-layout__content {
+	background-color: #EFEFEF;
+}
+
+.page-content {
+	text-align:center;
+	width: 100%;
+  margin: auto;
+}
+
+.attendance-students {
+  text-align: center;
+  margin: auto;
+  .selection {
+    margin-top: 150px;
+    border: 1px solid #E0115F;
+    background-color: #E0115F;
+    display: inline-flex;
+    width: 100%;
+    max-width: 600px;
+    select:focus {
+      outline: none;
+    }
+    select.student {
+      height: 60px;
+      color: #E0115F;
+      background-color: white;
+      border: none;
+      width: 50%;
+      -webkit-appearance: none;
+      border-radius: 0;
+      padding-left: 5px;
+    }
+    select.month, select.year {
+      height: 60px;
+      background-color: inherit;
+      color: white;
+      padding: 0px 10px;
+      border: none;
+      width: 40%;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    select.year {border-left: 1px solid white;}
+  }
+  table {
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    height: 320px;
+    margin: 10% auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+    th {
+        color:white;
+        background:#E0115F;
+        border-right: 1px solid white;
+        font-size:23px;
+        font-weight: 100;
+        padding:24px;
+        text-align:left;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+        vertical-align:middle;
+        &:last-child {border-right:none;}
+    }
+    tr {
+      border-top: 1px solid #C1C3D1;
+      border-bottom: 1px solid #C1C3D1;
+      color: #393939;;
+      font-size:16px;
+      font-weight:normal;
+      text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+      &:hover td {
+        background:#E0115F;
+        color:#FFFFFF;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+      }
+      tr:first-child { border-top:none;}
+      
+      tr:nth-child(odd) td { background:#EBEBEB;}
+      
+      tr:nth-child(odd):hover td { background:#E0115F;}
+      td {
+        padding:20px;
+        text-align:center;
+        vertical-align:middle;
+        font-weight:300;
+        font-size:18px;
+        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+        border-right: 1px solid #C1C3D1;
+        &:last-child {
+          border-right: 0px;
+        }
+      }
+    }
+  }
+}
